@@ -10,5 +10,8 @@ $router->get('/employee', [EmployeeController::class, 'index']);
 // get a single employee
 $router->get('/employee/{id}', [EmployeeController::class, 'indexById']);
 
+// add new employee data
+$router->post('/employee', [EmployeeController::class, 'store']);
+
 $router->dispatch();
 

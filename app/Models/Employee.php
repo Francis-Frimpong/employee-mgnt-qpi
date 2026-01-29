@@ -35,12 +35,12 @@ class Employee
         $gender = trim($data['gender']);
         $job_title = trim($data['job_title']);
         $salary = trim($data['salary']);
-        $hired_date = trim($data['hired_date']);
+        $hire_date = trim($data['hire_date']);
         $status = trim($data['status']);
 
-        $stmt = $this->db->prepare('INSERT INTO employees (employee_code, first_name, last_name, email, phone, gender, job_title, salary, hired_date, status) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $stmt = $this->db->prepare('INSERT INTO employees (employee_code, first_name, last_name, email, phone, gender, job_title, salary, hire_date, status) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-        $stmt->execute([$employee_code, $first_name, $last_name, $email, $phone, $gender, $job_title, $salary, $hired_date, $status]);
+        $stmt->execute([$employee_code, $first_name, $last_name, $email, $phone, $gender, $job_title, $salary, $hire_date, $status]);
 
         return ['message' => 'New employee added'];
 
