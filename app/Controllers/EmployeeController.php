@@ -60,4 +60,17 @@ class EmployeeController
         $result = $this->employee->create($data);
         Response::json($result, 201);
     }
+
+    public function update($id)
+    {
+        $input = json_decode(file_get_contents('php://input'), true);
+        $result = $this->employee->update($id, $input);
+        Response::json($result, 200);
+    }
+
+    public function destroy($id)
+    {
+        $result =$this->employee->delete($id);
+        Response::json($result, 200);
+    }
 }

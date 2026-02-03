@@ -46,6 +46,30 @@ class Employee
 
     }
 
+    public function update($id,$data)
+    {
+        $stmt = $this->db->prepare('UPDATE employees SET first_name=?, last_name=?, email=?, phone=?, job_title=?, salary=? WHERE id=? ');
+
+        $stmt->execute([
+            $data['first_name'],
+            $data['last_name'],
+            $data['email'],
+            $data['phone'],
+            $data['job_title'],
+            $data['salary'],
+            $id
+        ]);
+
+        return ['message' => 'Employee info updated'];
+    }
+
+    public function delete($id)
+    {
+        $stmt = $this->db->prepare('DELETE FROM employees WHERE id=?');
+        $stmt->execute([$id]);
+        return ['message' => 'Employee deleted'];
+    }
+
 
 
 }

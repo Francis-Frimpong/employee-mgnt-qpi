@@ -13,5 +13,11 @@ $router->get('/employee/{id}', [EmployeeController::class, 'indexById']);
 // add new employee data
 $router->post('/employee', [EmployeeController::class, 'store']);
 
+// Update employee data
+$router->put('/employee/{id}', [EmployeeController::class, 'update']);
+
+// delete employee data
+$router->delete('/employee/{id}', [EmployeeController::class, 'destroy']);
+
 $router->dispatch();
 
