@@ -4,6 +4,15 @@ require_once __DIR__ . '/../app/Controllers/EmployeeController.php';
 
 $router = new Router();
 
+
+// Auth Routes
+
+
+
+
+
+
+// Employee Routes
 // get all employees
 $router->get('/employee', [EmployeeController::class, 'index']);
 
